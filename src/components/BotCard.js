@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const BotCard = ({ bot, handleClick, handleDischarge, inArmy = false }) => {
     return (
@@ -10,6 +10,8 @@ const BotCard = ({ bot, handleClick, handleDischarge, inArmy = false }) => {
             <p>Health: {bot.health}</p>
             <p>Damage: {bot.damage}</p>
             <p>Armor: {bot.armor}</p>
+            
+            {/* Button to enlist or release the bot */}
             <button
                 onClick={handleClick}
                 className={inArmy ? "release-btn" : "enlist-btn"}
@@ -17,6 +19,7 @@ const BotCard = ({ bot, handleClick, handleDischarge, inArmy = false }) => {
                 {inArmy ? "Release Bot" : "Enlist Bot"}
             </button>
 
+            {/* Discharge button visible only if the bot is in the army */}
             {inArmy && (
                 <button onClick={handleDischarge} className="discharge-button">
                     X(discharge)
